@@ -1,0 +1,29 @@
+java script
+
+// Motivational button
+function showMessage() {
+  const messages = [
+    "Science is the future 🔬",
+    "Keep learning and experimenting!",
+    "Biotech can change the world 🌍",
+    "Stay curious 🚀"
+  ];
+
+  const random = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("message").innerText = random;
+}
+
+// Scroll animation
+const fades = document.querySelectorAll(".fade");
+
+function reveal() {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
